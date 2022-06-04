@@ -162,3 +162,11 @@ allTests.*
 # Dynamically generated files
 /AutoBuildCount.h
 /_nmake_pjj.bat
+
+# CMake
+CMakeCache.txt
+CMakeFiles
+cmake_install.cmake
+
+# IDEA
+.idea
