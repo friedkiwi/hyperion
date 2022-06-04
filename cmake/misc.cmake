@@ -23,3 +23,9 @@ if (MSVC)
     remove_definitions(-D_GNU_SOURCE)
     add_definitions(-D_MSVC_)
 endif()
+
+add_definitions(-DSIZEOF_INT_P=${CMAKE_SIZEOF_VOID_P})
+
+if (UNIX)
+    add_definitions(-DLTDL_SHLIB_EXT=".so")
+endif()

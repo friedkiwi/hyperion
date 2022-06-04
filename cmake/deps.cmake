@@ -16,3 +16,7 @@ elseif(CMAKE_SIZEOF_VOID_P EQUAL 4)
     # 32 bits
     set(EXTPKG_LIBS telnet SoftFloat crypto decNumber)
 endif()
+
+if (NEED_LINKING_AGAINST_LIBM)
+    set(EXT_DEPS_LIBS m ${EXT_DEPS_LIBS})
+endif()

@@ -2,7 +2,7 @@
 # SDL-Hercules CMakeList
 #
 #
-cmake_minimum_required(VERSION 3.0.0)
+cmake_minimum_required(VERSION 3.12)
 
 project(hyperion)
 
@@ -44,11 +44,7 @@ include_directories( BEFORE
         decNumber/
         )
 
-# HDT modules
-add_library( hdt1403
-        printer.c
-        sockdev.c
-        )
+include(cmake/hdt.cmake)
 
 # Internal libraries
 add_library( hsys
@@ -189,7 +185,8 @@ target_link_libraries(herc hsys hutil htape hdisk)
 #  executables
 #--------------------------------------------
 
-# tools
-add_executable(dasdinit dasdinit.c)
-target_link_libraries(dasdinit hsys hutil htape hdisk herc )
-target_link_libraries(dasdinit ${EXT_DEPS_LIBS})
+include(cmake/build_tools.cmake)
+
+add_executable(hercules bootstrap.c)
+target_link_libraries(hercules herc hsys hutil htape hdisk)
+target_link_libraries(hercules ${EXT_DEPS_LIBS})
