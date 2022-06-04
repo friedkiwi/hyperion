@@ -1,0 +1,12 @@
+[submodule "SoftFloat"]
+	path = SoftFloat
+	url = git@github.com:friedkiwi/SoftFloat.git
+[submodule "decNumber"]
+	path = decNumber
+	url = git@github.com:friedkiwi/decNumber.git
+[submodule "crypto"]
+	path = crypto
+	url = git@github.com:friedkiwi/crypto.git
+[submodule "telnet"]
+	path = telnet
+	url = git@github.com:friedkiwi/telnet.git
