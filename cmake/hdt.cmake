@@ -28,6 +28,7 @@ set_target_properties(hdt3088 PROPERTIES PREFIX "")
 
 add_library(hdt3270 SHARED console.c)
 set_target_properties(hdt3270 PROPERTIES PREFIX "")
+target_link_libraries(hdt3270 ${EXTPKG_LIBS})
 
 add_library(hdt3420 SHARED tapedev.c tapeccws.c awstape.c faketape.c hettape.c omatape.c scsitape.c scsiutil.c)
 set_target_properties(hdt3420 PROPERTIES PREFIX "")

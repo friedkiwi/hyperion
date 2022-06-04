@@ -47,12 +47,12 @@ include_directories( BEFORE
 include(cmake/hdt.cmake)
 
 # Internal libraries
-add_library( hsys
+add_library( hsys SHARED
         hsys.c
         )
 target_link_libraries( hsys ${EXTPKG_LIBS})
 
-add_library( hutil
+add_library( hutil SHARED
         codepage.c
         hdl.c
         hexdumpe.c
@@ -68,16 +68,16 @@ add_library( hutil
         pttrace.c
         version.c
         )
-target_link_libraries( hutil ${CMAKE_DL_LIBS} hsys)
+target_link_libraries( hutil ${CMAKE_DL_LIBS} ${EXT_DEPS_LIBS} hsys)
 
-add_library( htape
+add_library( htape SHARED
         hetlib.c
         ftlib.c
         sllib.c
         )
 target_link_libraries(htape hsys hutil)
 
-add_library( hdisk
+add_library( hdisk SHARED
         cache.c
         cckddasd.c
         cckdutil.c
@@ -92,9 +92,9 @@ add_library( hdisk
         fbadasd64.c
         shared.c
         )
-target_link_libraries( hdisk hsys)
+target_link_libraries( hdisk ${EXT_DEPS_LIBS} hsys)
 
-add_library( herc
+add_library( herc SHARED
         _archdep_templ.c
         archlvl.c
         assist.c

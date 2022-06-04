@@ -18,8 +18,33 @@ endif()
 check_symbol("fsync" "unistd.h" HAVE_FSYNC)
 check_symbol("setresuid" "unistd.h" HAVE_SETRESUID)
 check_symbol("setreuid" "unistd.h" HAVE_SETREUID)
+check_symbol("getopt_long" "unistd.h" HAVE_GETOPT_LONG)
+check_symbol("optreset" "unistd.h" HAVE_OPTRESET)
+check_symbol("geteuid" "unistd.h" HAVE_GETEUID)
+
+
 check_symbol("strsignal" "string.h" HAVE_STRSIGNAL)
 check_symbol("strerror_r" "string.h" HAVE_STRERROR_R)
+
+check_symbol("SIOCADDRT" "sys/ioctl.h" HAVE_DECL_SIOCADDRT)
+
+check_symbol("gettimeofday" "sys/time.h" HAVE_GETTIMEOFDAY)
+
+check_symbol("mlock" "sys/mman.h" HAVE_MLOCK)
+check_symbol("mlockall" "sys/mman.h" HAVE_MLOCKALL)
+
+check_symbol("inet_aton" "arpa/inet.h" HAVE_INET_ATON)
+
+check_symbol("nanosleep" "time.h" HAVE_NANOSLEEP)
+
+check_symbol("alphasort" "dirent.h" HAVE_ALPHASORT)
+
+check_symbol("setsockopt" "sys/socket.h" HAVE_BASIC_KEEPALIVE)
+if (HAVE_BASIC_KEEPALIVE)
+    add_definitions(-DHAVE_PARTIAL_KEEPALIVE)
+    add_definitions(-DHAVE_FULL_KEEPALIVE)
+endif()
+
 
 
 add_definitions(-DHAVE_STRUCT_IN_ADDR_S_ADDR)
