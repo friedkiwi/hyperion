@@ -9,4 +9,4 @@
 	url = https://github.com/SDL-Hercules-390/decNumber.git
 [submodule "crypto"]
 	path = crypto
-	url = https://github.com/SDL-Hercules-390/crypto.git
+	url = https://github.com/friedkiwi/crypto
