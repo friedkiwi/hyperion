@@ -1,0 +1,12 @@
+[submodule "telnet"]
+	path = telnet
+	url = https://github.com/SDL-Hercules-390/telnet.git
+[submodule "SoftFloat"]
+	path = SoftFloat
+	url = https://github.com/SDL-Hercules-390/SoftFloat.git
+[submodule "decNumber"]
+	path = decNumber
+	url = https://github.com/SDL-Hercules-390/decNumber.git
+[submodule "crypto"]
+	path = crypto
+	url = https://github.com/SDL-Hercules-390/crypto.git
